@@ -13,12 +13,20 @@ class Paragraph(object):
             raise Exception('model must be a markov model')
         self.model = model
 
-    def get_paragrapgh(self):
+    def get_paragraph(self):
         """
         Write a paragraph
         of 5 sentences.
         """
         self.text = ''
         for x in xrange(5):
-            self.text = self.text + self.model.make_sentence()
+          sentence = self._write_sentence()
+          self.text = self.text + sentence
         return self.text
+
+    def _write_sentence(self):
+      sentence = None
+      while sentence == None:
+        sentence = self.model.make_sentence()
+      return sentence
+
