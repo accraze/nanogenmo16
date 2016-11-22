@@ -12,9 +12,13 @@ class Novel(object):
         self.markov = markov
         self.chapter_count = chapter_count
 
-    def write(self):
+    def write(self, novel_title='novel'):
+        """
+        Composes chapters
+        and writes the novel to a text file
+        """
         self._compose_chapters()
-        self._write_to_file()
+        self._write_to_file(novel_title)
 
     def _compose_chapters(self):
         """
@@ -26,10 +30,12 @@ class Novel(object):
             c = Chapter(self.markov, chapter_num)
             self.chapters.append(c)
 
-    def _write_to_file(self):
-        with open('novel.txt', 'w') as f:
+    def _write_to_file(self, novel_title):
+        with open('%s.txt'% novel_title, 'w') as f:
             for chapter in self.chapters:
                 f.write(chapter.title)
+                f.write('\n')
                 paragraphs = chapter.write_chapter()
                 for paragraph in paragraphs:
                     f.write(paragraph)
+                    f.write('\n')
