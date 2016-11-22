@@ -1,4 +1,5 @@
 import markovify
+from random import randint
 
 
 class Paragraph(object):
@@ -19,7 +20,7 @@ class Paragraph(object):
         of 5 sentences.
         """
         self.text = ''
-        for x in xrange(5):
+        for x in xrange(randint(5, 12)):
           sentence = self._write_sentence()
           self.text = self.text + sentence
         return self.text
@@ -28,5 +29,5 @@ class Paragraph(object):
       sentence = None
       while sentence == None:
         sentence = self.model.make_sentence()
-      return sentence
+      return sentence + ' '
 
