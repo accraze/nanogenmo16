@@ -22,7 +22,8 @@ class Novel(object):
         and appends them to list
         """
         for count in xrange(self.chapter_count):
-            c = Chapter(self.markov, count)
+            chapter_num = count + 1
+            c = Chapter(self.markov, chapter_num)
             self.chapters.append(c)
 
     def _write_to_file(self):

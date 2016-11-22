@@ -23,7 +23,7 @@ class Chapter(object):
         that contains a random number
         of paragraphs
         """
-        self.paragraphs = [self.title]
+        self.paragraphs = []
         self.paragraphs.append('\n')
         for x in xrange(randint(0, 50)):
             p = Paragraph(self.model)
