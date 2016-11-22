@@ -11,11 +11,11 @@ class Chapter(object):
     written by markov models.
     """
 
-    def __init__(self, model, title=None):
+    def __init__(self, model, title):
         if not isinstance(model, markovify.Text):
             raise Exception('model must be a markov model')
         self.model = model
-        self.title = title
+        self.title = 'Chapter %d' % title
 
     def write_chapter(self):
         """
@@ -23,12 +23,10 @@ class Chapter(object):
         that contains a random number
         of paragraphs
         """
-        self.paragraphs = []
+        self.paragraphs = [self.title]
         self.paragraphs.append('\n')
         for x in xrange(randint(0, 50)):
             p = Paragraph(self.model)
             self.paragraphs.append(p.get_paragraph())
             self.paragraphs.append('\n')
-
-        for par in self.paragraphs:
-            print par
+        return self.paragraphs
