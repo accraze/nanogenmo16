@@ -21,13 +21,12 @@ class Paragraph(object):
         """
         self.text = ''
         for x in xrange(randint(5, 12)):
-          sentence = self._write_sentence()
-          self.text = self.text + sentence
+            sentence = self._write_sentence()
+            self.text = self.text + sentence
         return self.text
 
     def _write_sentence(self):
-      sentence = None
-      while sentence == None:
-        sentence = self.model.make_sentence()
-      return sentence + ' '
-
+        sentence = None
+        while sentence == None:
+            sentence = self.model.make_sentence()
+        return sentence + ' '
