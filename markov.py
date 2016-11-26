@@ -13,8 +13,9 @@ class MarkovModel(object):
     on an Internet Archive text file.
     """
 
-    def __init__(self):
+    def __init__(self, exclude=None):
         self.archive_name = None
+        self.exclude = exclude
         self.model = None
 
     def train_model(self, archive_name):
@@ -25,6 +26,29 @@ class MarkovModel(object):
         self.archive_name = archive_name
         self._download_corpus()
         self._unpack_corpus()
+    
+    def sentence_split(self, text):
+        """
+        Splits full-text string into a list of sentences.
+        """
+        sentences = split_into_sentences(text)
+        if self.exclude:
+          return self._clean_sentences(sentences)
+        else:
+          return sentences
+    
+    def _clean_sentences(self, sentences):
+        """
+        Removes excluded regex patterns
+        """
+        if isinstance(self.exclude,re._pattern_type):
+          regex = self.exclude
+          return [s for s in sentences if not regex.search(s)]
+        if isinstance(self.exclude, list):
+          filtered = sentences
+          for regex in self.exclude:
+            filtered = [s for s in filtered if not regex.search(s)]
+          return filtered
 
     def _download_corpus(self):
         """
