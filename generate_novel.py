@@ -1,6 +1,6 @@
 from markov import MarkovModel, POSMarkov
 import markovify
-from novel import Novel
+from markov_novel import Novel
 import random
 
 ia_archives = [
@@ -11,7 +11,11 @@ ia_archives = [
   'al_FC_Industrial_Society_and_Its_Future_a4',
   'VaneigemTheRevolutionOfEverydayLife',
   'DebordSocietyOfTheSpectacleDonaldNicholsonSmithTranslation',
-  'TheGeometry'
+  'TheGeometry',
+  'BurdenOfSkeptism-CarlSagan',
+  'WallaceStevensTheNecessaryAngelEssaysOnRealityAndTheImagination',
+  'arxiv-cs0007014',
+  'al_Max_Cafard_The_Surre_gion_alist_Manifesto_and_Other_Writings_a4'
 ]
 
 markov_models = []
