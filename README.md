@@ -1,4 +1,5 @@
 # nanogenmo16
+Writing code that will write a novel with over 50K characters.
 
 ## Mythology & The Slap
 A post-geometric futurist manifesto in 12 chromatic parts.
