@@ -25,3 +25,7 @@ Written by Markov chains trained on text from the Internet Archive. Training cor
 Two libraries were created for this project:
 * [ia-markov](https://github.com/accraze/python-ia-markov) - train a markov model on text from the internet archive
 * [markov-novel](https://github.com/accraze/python-markov-novel) - create a novel with a markov chain
+
+
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
